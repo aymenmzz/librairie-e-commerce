@@ -4,6 +4,12 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* color: darkgrey; */
+    background: url("https://imgs.search.brave.com/v_1n7vsgD_jFHany4YXZtyWihJ2Dwfctx7vhf29yyv0/rs:fit:1021:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC52/OE5BMzhWMTVQaVJH/TVRmNGN1bEVnSGFE/YyZwaWQ9QXBp") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 a {
@@ -22,5 +28,373 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+nav {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+button {
+  margin: 1px 0;
+  padding: 7px 12px 7px 12px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  border: none;
+}
+
+main {
+  background-color: white;
+  margin: 20px 10% 10px 10%;
+  border-radius: 5px;
+  padding-bottom: 7px;
+  padding-top: 1px;
+}
+
+main > p {
+  padding: 0 5%;
+}
+
+.container {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  max-width: 95%;
+}
+
+.adjust-logo {
+  height: 30px;
+  width: auto;
+}
+
+.loupe-logo {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.navbar {
+  background-color: lightgray;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.border-black {
+  border : 1px solid black;
+}
+
+.top-cinq {
+  width: 65%;
+}
+
+.book {
+  margin: 5px 30px 10px 30px;
+  padding-top: 5px;
+  padding-bottom: 5px; 
+  background-color: white;
+}
+
+.book > h2 {
+  text-align: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin: 0;
+}
+
+.book > p {
+  padding-left: 15%;
+  padding-right:15%;
+}
+
+.book > button {
+  margin-bottom : 10px;
+  margin-top : 10px
+}
+
+.book-img {
+  max-width: 200px;
+  height: auto;
+}
+
+.auteur {
+  background-color: white;
+  margin: 0 5% 3% 5%;
+  padding-bottom : 10px;
+  padding-top: 0;
+  padding: 0 5px 10px 5px;
+} 
+
+.auteur-img {
+  margin : 15px 0; 
+  padding : 3px;
+  background-color: white;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%
+}
+
+.page-livre {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+}
+
+.page-livre > img {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 7px;
+  max-width: 350px;
+  height: auto;
+}
+
+.page-livre > p {
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: white;
+}
+
+.resume {
+  width: 86%;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 0 35px;
+  text-align: center
+}
+
+.boutons-panier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouton-ajouter {
+  margin: 25px 0;
+}
+
+.bouton-fleche {
+  margin: auto 10px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.title {
+  width: 35%;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.title-padding {
+  padding: 10px 0;
+}
+
+.search-bar > label > input {
+  width: 290px;
+  border-radius: 5px;
+  padding: 4px 3px 4px 3px;
+}
+
+.search-bar > button {
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 100px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
+}
+
+table {
+  margin : 10px auto;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black; 
+  padding: 5px;
+  margin: 10px 5px 10px 5px;
+  background-color: white;
+}
+
+.last-row {
+  border-bottom: 1px solid black;
+  margin-bottom : 10px;
+}
+
+.table-title {
+  width: 32%;
+}
+
+.table-price  {
+  width: 18%;
+}
+
+.table-img {
+  max-width: 100px;
+  height: auto;
+}
+
+.table-width {
+  width: 25%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.author > p{
+ padding-left: 12%;
+ padding-right: 12%;
+}
+
+@media(max-width: 930px) {
+  .title {
+    min-width: 340px;
+  }
+}
+
+@media(max-width: 860px) {
+  .top-cinq {
+    width: 75%;
+  }
+
+  .grid-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction : column;
+  }
+
+  .auteur {
+    width: 80%;
+  }
+
+  .image-center {
+    width: 100%;
+  }
+}
+
+@media(max-width: 700px) {
+  .top-cinq {
+    width: 80%;
+  }
+
+  main > p, main > h1 {
+    padding: 0 10%;
+  }
+
+  .top-cinq {
+    width: 80%;
+  }
+}
+
+@media(max-width: 500px) {
+  .top-cinq {
+    width: 90%;
+  }
+
+  .auteur {
+    width: 90%;
+  }
+
+  .book {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .book > h2, .book > p {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+  
+  .author > p {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+  .author > img {
+    max-width: 300px;
+  }
+
+  .table-row {
+    margin: 0;
+    padding: 5px 1px 5px 1px;
+  }
+
+  .title {
+    min-width: 250px;
+  }
+
+  .search-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-bar > label > input {
+    width: 180px;
+  }
+  .search-bar > button {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 110px;
+  }
+}
+
+@media(max-width: 399px) {
+  main > h1 {
+    padding: 0 15%;
+  }
+
+  .table-title {
+    width: 36%;
+  }
+  
+  .table-price  {
+    width: 14%;
   }
 }
