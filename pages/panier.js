@@ -11,7 +11,7 @@ export default function Panier() {
   );
 
   const eneleveTiretEtDeuxPoints = (texte) => {
-    const texteSansTiret = texte.split("-")[0];
+    const texteSansTiret = texte.split(" - ")[0];
     const texteSansDeuxPoint = texteSansTiret.split(":");
     const texteFinal = texteSansDeuxPoint[0];
     return texteFinal;
