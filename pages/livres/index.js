@@ -5,15 +5,17 @@ import SearchBar from "../../components/SearchBar";
 import CustomHead from "../../components/CustomHead";
 
 export default function Livres({ books }) {
-  const [data, setData] = useState(JSON.parse(books));
+  const parsedBooks = JSON.parse(books);
+  const [data, setData] = useState(parsedBooks);
   const [search, setSearch] = useState("");
 
   const handleChange = (event) => setSearch(event.target.value);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newData = JSON.parse(books);
-    const filteredData = newData.filter((state) => correspondsToSearch(state));
+    const filteredData = parsedBooks.filter((state) =>
+      correspondsToSearch(state)
+    );
     setData(filteredData);
   };
 
@@ -27,9 +29,10 @@ export default function Livres({ books }) {
   };
 
   const clearSearch = () => {
-    setData(JSON.parse(books));
+    setData(parsedBooks);
     setSearch("");
   };
+  const text = "h2";
 
   return (
     <div className="flex-column">
