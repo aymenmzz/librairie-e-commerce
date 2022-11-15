@@ -17,12 +17,12 @@ export default function Livre({ book, topFive }) {
         topFive && topFive
       }`}
     >
-      <CustomLink href={`/livres/${_id}`}>
+      <CustomLink href={`/livres/${_id}`} noHover={true}>
         <h2>{titre}</h2>
       </CustomLink>
       <h3>Par {auteur}</h3>
       <p>{`${limitTo45Words(resume)} ...`}</p>
-      <CustomLink href={`/livres/${_id}`}>
+      <CustomLink href={`/livres/${_id}`} noHover={true}>
         <img className="book-img border-black rounded" src={img} alt={titre} />
       </CustomLink>
       <AjouterAuPanier book={book} />

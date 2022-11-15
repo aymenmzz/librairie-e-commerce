@@ -6,13 +6,14 @@ import BoutonDroite from "./BoutonDroite";
 import BoutonGauche from "./BoutonGauche";
 
 export default function LivresAuteur({ books, authorName }) {
-  const index = useSelector((state) => state.index);
+  const { index } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const { length } = books;
+  const { img, _id, titre } = books[index];
+
   const decrement = () => dispatch(prevIndex(length));
   const increment = () => dispatch(nextIndex(length));
-  const { img, _id, titre } = books[index];
 
   const moreThanOneBook = length > 1;
   const auPluriel = moreThanOneBook ? "s" : "";

@@ -12,6 +12,10 @@ a {
   text-decoration: none;
 }
 
+.link:hover, svg:hover {
+  opacity: 0.7;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -29,7 +33,9 @@ button {
   border-radius: 5px;
   border: none;
   color: black;
+  cursor: pointer;
 }
+
 
 main {
   background-color: white;
@@ -41,6 +47,11 @@ main {
 
 main > p {
   padding: 0 5%;
+}
+
+.selected {
+  /* font-weight: bold; */
+  color: white;
 }
 
 .container {
@@ -274,7 +285,7 @@ table {
   width: 25%;
 }
 
-.pointer {
+.pointer, svg {
   cursor: pointer;
 }
 

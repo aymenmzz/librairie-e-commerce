@@ -2,8 +2,13 @@ import React from "react";
 import Panier from "./Panier";
 import CustomLink from "./CustomLink";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar({ children }) {
+  const { pathname } = useRouter();
+  const selectedPath = pathname.split("/")[1];
+
+  const isSelectedPath = (path) => path === selectedPath;
   return (
     <>
       <nav className="container navbar">
@@ -14,7 +19,9 @@ export default function Navbar({ children }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 adjust-logo"
+            className={`w-6 h-6 adjust-logo ${
+              isSelectedPath("") && "selected"
+            }`}
           >
             <path
               strokeLinecap="round"
@@ -23,11 +30,21 @@ export default function Navbar({ children }) {
             />
           </svg>
         </Link>
-        <CustomLink href="/livres">Livres</CustomLink>
-        <CustomLink href="/auteurs">Auteurs</CustomLink>
-        <CustomLink href="/topcinq">Mon top 5</CustomLink>
-        <Link href="/apropos">À propos</Link>
-        <Panier />
+        <CustomLink href="/livres" selected={isSelectedPath("livres")}>
+          Livres
+        </CustomLink>
+        <CustomLink href="/auteurs" selected={isSelectedPath("auteurs")}>
+          Auteurs
+        </CustomLink>
+        <CustomLink href="/topcinq" selected={isSelectedPath("topcinq")}>
+          Mon top 5
+        </CustomLink>
+        <Link href="/apropos">
+          <a className={`link ${isSelectedPath("apropos") && "selected"}`}>
+            À propos
+          </a>
+        </Link>
+        <Panier selected={isSelectedPath("panier")} />
       </nav>
       {children}
     </>

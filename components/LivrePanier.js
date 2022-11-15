@@ -11,16 +11,21 @@ import CustomLink from "./CustomLink";
 export default function LivrePanier({ book, style, formatTitle }) {
   const dispatch = useDispatch();
   const store = useStore();
+
   const { amount, _id, titre, prix, img } = book;
+
   const willDelete = amount === 1;
+
   const increment = () => {
     dispatch(addCopyToCart(book));
     save();
   };
+
   const decrement = () => {
     dispatch(removeCopyFromCart(book));
     save();
   };
+
   const deleteBook = () => {
     dispatch(removeFromCart(_id));
     save();
@@ -33,16 +38,16 @@ export default function LivrePanier({ book, style, formatTitle }) {
 
   const boutonsAjouterEtSupprimer = (
     <div className="boutons-panier">
-      <BoutonAjouter increment={increment} amount={amount} titre={titre} />
-      {amount}
       <BoutonSupprimer willDelete={willDelete} decrement={decrement} />
+      {amount}
+      <BoutonAjouter increment={increment} amount={amount} titre={titre} />
     </div>
   );
 
   return (
     <tr className={style}>
       <td className="table-width">
-        <CustomLink href={`/livres/${_id}`}>
+        <CustomLink href={`/livres/${_id}`} noHover={true}>
           <img
             src={img}
             className="table-img border-black rounded"

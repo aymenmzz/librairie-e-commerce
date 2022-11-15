@@ -1,7 +1,6 @@
 import Link from "next/link";
 import CustomHead from "../components/CustomHead";
 import CustomLink from "../components/CustomLink";
-import { useEffect } from "react";
 
 export default function Home() {
   const linkStyle = { color: "red" };

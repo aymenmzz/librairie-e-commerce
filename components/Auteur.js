@@ -6,7 +6,7 @@ export default function Auteur({ author }) {
 
   return (
     <div className="text-center auteur rounded">
-      <CustomLink href={`/auteurs/${_id}`}>
+      <CustomLink href={`/auteurs/${_id}`} noHover={true}>
         <>
           <h2>{nom}</h2>
           <img className="image-center rounded" src={img} alt={nom} />

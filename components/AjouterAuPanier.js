@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function AjouterAuPanier({ book }) {
-  const cart = useSelector((state) => state.cart);
+  const { cart } = useSelector((state) => state);
   const dispatch = useDispatch();
   const store = useStore();
 
@@ -16,7 +16,6 @@ export default function AjouterAuPanier({ book }) {
     } else dispatch(addBookToCart(book));
     const { cart: state } = store.getState();
     localStorage.setItem("Panier", JSON.stringify(state));
-    console.log("has been saved to the localStorage !");
     toast.success(`Un exemplaire du livre ${titre} a été ajouté au panier !`);
   };
 

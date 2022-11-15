@@ -1,10 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import Link from "next/link";
 
-export default function Panier() {
-  const cart = useSelector((state) => state.cart);
-  const sum = cart.reduce((sumAmount, book) => (sumAmount += book.amount), 0);
+export default function Panier({ selected }) {
   return (
     <Link href="/panier">
       <div className="container">
@@ -14,7 +11,7 @@ export default function Panier() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 adjust-logo"
+          className={`w-6 h-6 adjust-logo ${selected && "selected"}`}
         >
           <path
             strokeLinecap="round"

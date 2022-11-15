@@ -4,9 +4,8 @@ import CustomHead from "../../components/CustomHead";
 import LivresAuteur from "../../components/LivresAuteur";
 
 export default function Auteur({ author, books }) {
-  const parsedAuthor = JSON.parse(author);
+  const { nom, img, description, age } = JSON.parse(author);
   const parsedBooks = JSON.parse(books);
-  const { nom, img, description, age } = parsedAuthor;
 
   return (
     <div className="flex-column width-full">

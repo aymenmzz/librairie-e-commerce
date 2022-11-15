@@ -6,7 +6,7 @@ export default function BoutonAjouter({ amount, increment, titre }) {
 
   return (
     <button
-      style={{ marginRight: 5 }}
+      style={{ marginLeft: 5 }}
       onClick={amount < 20 ? increment : alertWhenTooMuch}
     >
       +

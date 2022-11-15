@@ -32,7 +32,6 @@ export default function Livres({ books }) {
     setData(parsedBooks);
     setSearch("");
   };
-  const text = "h2";
 
   return (
     <div className="flex-column">
