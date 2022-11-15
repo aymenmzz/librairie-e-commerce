@@ -32,7 +32,7 @@ export default function Livres({ books }) {
   };
 
   return (
-    <div className="flex-column bg-black">
+    <div className="flex-column">
       <CustomHead title="Livres" />
       <div className="title rounded">
         <h1 className="text-center">Livres :</h1>

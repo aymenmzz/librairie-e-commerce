@@ -4,13 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    /* color: darkgrey; */
-    background: url("https://imgs.search.brave.com/v_1n7vsgD_jFHany4YXZtyWihJ2Dwfctx7vhf29yyv0/rs:fit:1021:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC52/OE5BMzhWMTVQaVJH/TVRmNGN1bEVnSGFE/YyZwaWQ9QXBp") fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center center;
+    background-color: black;
 }
 
 a {
@@ -33,6 +27,7 @@ button {
   background-color: lightgrey;
   border-radius: 5px;
   border: none;
+  color: black;
 }
 
 main {
@@ -299,12 +294,6 @@ table {
 }
 
 @media(max-width: 860px) {
-  .bg-black {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-  }
-
   .top-cinq {
     width: 75%;
   }
