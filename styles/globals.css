@@ -19,6 +19,7 @@ a {
 nav {
   padding-bottom: 10px;
   padding-top: 10px;
+  color: black;
 }
 
 button {
@@ -315,6 +316,10 @@ table {
 }
 
 @media(max-width: 700px) {
+  .auteur-img {
+    width: 98%;
+  }
+  
   .top-cinq {
     width: 80%;
   }
