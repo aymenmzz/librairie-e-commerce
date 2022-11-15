@@ -299,6 +299,12 @@ table {
 }
 
 @media(max-width: 860px) {
+  .bg-black {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+
   .top-cinq {
     width: 75%;
   }
@@ -334,13 +340,6 @@ table {
 }
 
 @media(max-width: 500px) {
-
-  body{
-    -webkit-background-size: auto;
-    -moz-background-size: auto;
-    -o-background-size: auto;
-    background-size: auto;
-  }
 
   .top-cinq {
     width: 90%;
