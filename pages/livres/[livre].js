@@ -21,7 +21,7 @@ export default function Livre({ book }) {
       <p>
         {separatingDots.map((sentence, id) => (
           <Fragment key={id}>
-            {sentence.replaceAll("-", "")}.<br />
+            {sentence.replaceAll("- ", "\n")}.<br />
           </Fragment>
         ))}
       </p>
