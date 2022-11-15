@@ -95,7 +95,7 @@ main > p {
 }
 
 .border-black {
-  border : 1px solid black;
+  border : 1px solid lightgrey;
 }
 
 .top-cinq {
@@ -319,7 +319,7 @@ table {
   .auteur-img {
     width: 98%;
   }
-  
+
   .top-cinq {
     width: 80%;
   }
