@@ -37,7 +37,7 @@ export async function getStaticProps(context) {
   const authors = await getAuthors();
   const books = await getBooks();
   const currentAuthor = authors.find(
-    (author) => author._id.toString() === context.query.auteur
+    (author) => author._id.toString() === context.params.auteur
   );
   const booksOfCurrentAuthor = books.filter(
     (book) => book.auteur === currentAuthor.nom
