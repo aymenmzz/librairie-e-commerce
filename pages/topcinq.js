@@ -5,8 +5,7 @@ import CustomHead from "../components/CustomHead";
 
 function TopCinq({ topFive }) {
   if (!topFive) {
-    console.log("loading");
-    return <>Loading...</>;
+    return <p style={{ color: "white" }}>Chargement...</p>;
   }
 
   const data = JSON.parse(topFive);

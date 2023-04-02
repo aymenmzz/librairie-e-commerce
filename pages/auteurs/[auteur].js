@@ -4,6 +4,9 @@ import CustomHead from "../../components/CustomHead";
 import LivresAuteur from "../../components/LivresAuteur";
 
 export default function Auteur({ author, books }) {
+  if (!author || !books) {
+    return <p style={{ color: "white" }}>Chargement...</p>;
+  }
   const { nom, img, description, age } = JSON.parse(author);
   const parsedBooks = JSON.parse(books);
 

@@ -8,8 +8,7 @@ import CustomHead from "../../components/CustomHead";
 export default function Livre({ book }) {
   const dispatch = useDispatch();
   if (!book) {
-    console.log("loading...");
-    return <p style={{ color: "white" }}>Loading...</p>;
+    return <p style={{ color: "white" }}>Chargement...</p>;
   }
   const livre = JSON.parse(book);
   const { titre, img, auteur, prix, resume } = livre;
