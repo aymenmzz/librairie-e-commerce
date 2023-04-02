@@ -62,7 +62,7 @@ export default function Livres({ books }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await getBooks();
-  return { props: { books: JSON.stringify(data) } };
+  return { props: { books: JSON.stringify(data) }, revalidate: 600 };
 }

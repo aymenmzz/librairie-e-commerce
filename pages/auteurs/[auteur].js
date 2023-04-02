@@ -22,7 +22,14 @@ export default function Auteur({ author, books }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
   await client.connect();
   const authors = await getAuthors();
   const books = await getBooks();
@@ -34,5 +41,8 @@ export async function getServerSideProps(context) {
   );
   const JSONBooks = JSON.stringify(booksOfCurrentAuthor);
   await client.close();
-  return { props: { author: JSON.stringify(currentAuthor), books: JSONBooks } };
+  return {
+    props: { author: JSON.stringify(currentAuthor), books: JSONBooks },
+    revalidate: 600,
+  };
 }
