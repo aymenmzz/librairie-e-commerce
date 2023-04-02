@@ -22,9 +22,12 @@ export default function Auteurs({ authors }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   await client.connect();
   const authors = await getAuthors();
   await client.close();
-  return { props: { authors: JSON.stringify(authors) } };
+  return {
+    props: { authors: JSON.stringify(authors) },
+    revalidate: 600,
+  };
 }

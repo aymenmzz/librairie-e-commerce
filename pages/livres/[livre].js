@@ -7,6 +7,10 @@ import CustomHead from "../../components/CustomHead";
 
 export default function Livre({ book }) {
   const dispatch = useDispatch();
+  if (!book) {
+    console.log("loading...");
+    return <p style={{ color: "white" }}>Loading...</p>;
+  }
   const livre = JSON.parse(book);
   const { titre, img, auteur, prix, resume } = livre;
 
@@ -53,12 +57,20 @@ export default function Livre({ book }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { livre: "635960d02029f92b7ad44bcb" } }],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
   const data = await getBooks();
   const book = data.find(
-    (value) => value._id.toString() === context.query.livre
+    (value) => value._id.toString() === context.params.livre
   );
   return {
     props: { book: JSON.stringify(book) },
+    revalidate: 600,
   };
 }

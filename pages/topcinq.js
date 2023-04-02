@@ -4,8 +4,12 @@ import { getTopFive } from "../back/data";
 import CustomHead from "../components/CustomHead";
 
 function TopCinq({ topFive }) {
-  const data = JSON.parse(topFive);
+  if (!topFive) {
+    console.log("loading");
+    return <>Loading...</>;
+  }
 
+  const data = JSON.parse(topFive);
   return (
     <div className="flex-column">
       <CustomHead title="Top 5" />
@@ -20,8 +24,22 @@ function TopCinq({ topFive }) {
 }
 export default TopCinq;
 
-export async function getServerSideProps() {
-  const topFive = await getTopFive();
+// export async function getServerSideProps() {
+//   const topFive = await getTopFive();
 
-  return { props: { topFive: JSON.stringify(topFive) } };
+//   return { props: { topFive: JSON.stringify(topFive) } };
+// }
+
+// export async function getStaticPaths() {
+//   return { fallback: true, paths: [] };
+// }
+
+export async function getStaticProps() {
+  console.log("fetching top five...", new Date().toJSON());
+  const topFive = await getTopFive();
+  console.log("top five fetched !", new Date().toJSON());
+  return {
+    props: { topFive: JSON.stringify(topFive) },
+    revalidate: 600,
+  };
 }
