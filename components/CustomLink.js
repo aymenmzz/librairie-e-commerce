@@ -22,7 +22,7 @@ export default function CustomLink({
       <a
         className={`pointer ${selected ? "selected" : !noHover && "link"} `}
         style={style}
-        onClick={notifyLoading}
+        // onClick={notifyLoading}
       >
         {children}
       </a>
