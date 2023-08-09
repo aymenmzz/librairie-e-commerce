@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 import Livre from "../../components/Livre";
 import { getBooks } from "../../back/data";
 import SearchBar from "../../components/SearchBar";
@@ -11,22 +11,26 @@ export default function Livres({ books }) {
 
   const handleChange = (event) => setSearch(event.target.value);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const filteredData = parsedBooks.filter((state) =>
-      correspondsToSearch(state)
-    );
-    setData(filteredData);
-  };
+  const handleSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      const filteredData = parsedBooks.filter(correspondsToSearch);
+      setData(filteredData);
+    },
+    [parsedBooks]
+  );
 
-  const correspondsToSearch = (state) => {
-    const searchLowered = search.toLowerCase();
-    const { titre, auteur } = state;
-    return (
-      titre.toLowerCase().includes(searchLowered) ||
-      auteur.toLowerCase().includes(searchLowered)
-    );
-  };
+  const correspondsToSearch = useCallback(
+    (state) => {
+      const searchLowered = search.toLowerCase();
+      const { titre, auteur } = state;
+      return (
+        titre.toLowerCase().includes(searchLowered) ||
+        auteur.toLowerCase().includes(searchLowered)
+      );
+    },
+    [search]
+  );
 
   const clearSearch = () => {
     setData(parsedBooks);

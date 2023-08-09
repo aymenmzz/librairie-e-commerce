@@ -9,6 +9,16 @@ export default function Navbar({ children }) {
   const selectedPath = pathname.split("/")[1];
 
   const isSelectedPath = (path) => path === selectedPath;
+
+  const noPathIsSelected = isSelectedPath("");
+  const noPathClass = noPathIsSelected ? "selected" : "";
+  const bookPathIsSelected = isSelectedPath("livres");
+  const authorPathIsSelected = isSelectedPath("auteurs");
+  const topFivePathIsSelected = isSelectedPath("topcinq");
+  const informationPathIsSelected = isSelectedPath("apropos");
+  const informationPathClass = informationPathIsSelected ? "selected" : "";
+  const cartPathIsSelected = isSelectedPath("panier");
+
   return (
     <>
       <nav className="container navbar">
@@ -19,9 +29,7 @@ export default function Navbar({ children }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`w-6 h-6 adjust-logo ${
-              isSelectedPath("") && "selected"
-            }`}
+            className={`w-6 h-6 adjust-logo ${noPathClass}`}
           >
             <path
               strokeLinecap="round"
@@ -30,21 +38,19 @@ export default function Navbar({ children }) {
             />
           </svg>
         </Link>
-        <CustomLink href="/livres" selected={isSelectedPath("livres")}>
+        <CustomLink href="/livres" selected={bookPathIsSelected}>
           Livres
         </CustomLink>
-        <CustomLink href="/auteurs" selected={isSelectedPath("auteurs")}>
+        <CustomLink href="/auteurs" selected={authorPathIsSelected}>
           Auteurs
         </CustomLink>
-        <CustomLink href="/topcinq" selected={isSelectedPath("topcinq")}>
+        <CustomLink href="/topcinq" selected={topFivePathIsSelected}>
           Mon top 5
         </CustomLink>
         <Link href="/apropos">
-          <a className={`link ${isSelectedPath("apropos") && "selected"}`}>
-            À propos
-          </a>
+          <a className={`link ${informationPathClass}`}>À propos</a>
         </Link>
-        <Panier selected={isSelectedPath("panier")} />
+        <Panier selected={cartPathIsSelected} />
       </nav>
       {children}
     </>

@@ -5,6 +5,13 @@ import { toast } from "react-toastify";
 import { getBooks } from "../../back/data";
 import CustomHead from "../../components/CustomHead";
 
+const sentenceMapper = (sentence, id) => {
+  const modifiedSentence = sentence.replaceAll("- ", "\n");
+  <Fragment key={id}>
+    {modifiedSentence}.<br />
+  </Fragment>;
+};
+
 export default function Livre({ book }) {
   const dispatch = useDispatch();
   if (!book) {
@@ -19,17 +26,12 @@ export default function Livre({ book }) {
   };
 
   const formatResume = (text) => {
-    const separatingDots = text.split(".");
-    return (
-      <p>
-        {separatingDots.map((sentence, id) => (
-          <Fragment key={id}>
-            {sentence.replaceAll("- ", "\n")}.<br />
-          </Fragment>
-        ))}
-      </p>
-    );
+    const sentences = text.split(".");
+    const mappedSentences = sentences.map(sentenceMapper);
+    return <p>{mappedSentences}</p>;
   };
+
+  const formatedResume = formatResume(resume);
 
   return (
     <>
@@ -49,7 +51,7 @@ export default function Livre({ book }) {
         </button>
         <div className="resume rounded">
           <h4>Résumé : </h4>
-          {formatResume(resume)}
+          {formatedResume}
         </div>
       </div>
     </>

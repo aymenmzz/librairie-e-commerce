@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 export default function Panier({ selected }) {
+  const selectedClass = selected ? "selected" : "";
   return (
     <Link href="/panier">
       <div className="container">
@@ -11,7 +12,7 @@ export default function Panier({ selected }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`w-6 h-6 adjust-logo ${selected && "selected"}`}
+          className={`w-6 h-6 adjust-logo ${selectedClass}`}
         >
           <path
             strokeLinecap="round"

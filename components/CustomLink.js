@@ -9,21 +9,11 @@ export default function CustomLink({
   noHover,
   selected,
 }) {
-  const optionToast = { autoClose: 1300 };
-
-  const notifyLoading = () =>
-    toast.info(
-      "Veuillez patienter, le chargement de la page est en cours...",
-      optionToast
-    );
-
+  const notSelectedClass = noHover ? "" : "link";
+  const selectedClass = selected ? "selected" : notSelectedClass;
   return (
     <Link href={href}>
-      <a
-        className={`pointer ${selected ? "selected" : !noHover && "link"} `}
-        style={style}
-        // onClick={notifyLoading}
-      >
+      <a className={`pointer ${selectedClass} `} style={style}>
         {children}
       </a>
     </Link>

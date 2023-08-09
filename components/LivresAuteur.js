@@ -6,7 +6,7 @@ import BoutonDroite from "./BoutonDroite";
 import BoutonGauche from "./BoutonGauche";
 
 export default function LivresAuteur({ books, authorName }) {
-  const { index } = useSelector((state) => state);
+  const index = useSelector((state) => state.index);
   const dispatch = useDispatch();
 
   const { length } = books;
